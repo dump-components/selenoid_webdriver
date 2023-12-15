@@ -46,6 +46,6 @@ jobs:
           context: ./Dockerfiles/${{ env.BROWSER }}/${{ env.BROWSER_VERSION }}/
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/selenoid_webdriver:${{ env.BROWSER }}_${{ env.BROWSER_VERSION }}-${{ env.RELEASE_VERSION }}
-            ${{ secrets.DOCKER_USERNAME }}/selenoid_webdriver:${{ env.BROWSER }}_${{ env.BROWSER_VERSION }}-latest
+            dumptec/selenoid_webdriver:${{ env.BROWSER }}_${{ env.BROWSER_VERSION }}-${{ env.RELEASE_VERSION }}
+            dumptec/selenoid_webdriver:${{ env.BROWSER }}_${{ env.BROWSER_VERSION }}-latest
           labels: ${{ steps.meta.outputs.labels }}
