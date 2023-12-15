@@ -26,21 +26,21 @@ class Certificate:
     def _openManageCertificates(self):
         logging.info('Open manage certificates.')
 
-        time.sleep(0.5)
-        pyautogui.press('tab', presses=7, interval=0.25)
+        time.sleep(1)
+        pyautogui.press('tab', presses=7, interval=0.75)
         pyautogui.press('enter')
 
     def _openImportCertificate(self):
         logging.info('Open import certificate.')
 
-        time.sleep(0.5)
-        pyautogui.press('tab', presses=2, interval=0.25)
+        time.sleep(1)
+        pyautogui.press('tab', presses=2, interval=0.75)
         pyautogui.press('enter')
 
     def _findCertificate(self):
         logging.info('Find certificate.')
 
-        time.sleep(0.5)
+        time.sleep(1)
         pyautogui.press('/')
         pyautogui.write('home/selenium/Downloads/decoded_certificate.pfx')
         pyautogui.press('enter')
@@ -48,7 +48,7 @@ class Certificate:
     def _typePasswordCertificate(self):
         logging.info('Typing password certificate.')
 
-        time.sleep(0.5)
+        time.sleep(1)
         pyautogui.write(self._getPasswordCertificate())
         pyautogui.press('enter')
 
