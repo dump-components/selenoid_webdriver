@@ -19,22 +19,23 @@ class Certificate:
     def _openChromeSettings(self):
         logging.info('Open chrome settings.')
 
+        time.sleep(0.5)
         pyautogui.hotkey('ctrl', 'l')
-        pyautogui.write('chrome://settings/security?search=cert\n')
+        pyautogui.write('chrome://settings/security?search=cert')
         pyautogui.press('enter')
 
     def _openManageCertificates(self):
         logging.info('Open manage certificates.')
 
-        time.sleep(1)
-        pyautogui.press('tab', presses=7, interval=0.75)
+        time.sleep(0.5)
+        pyautogui.press('tab', presses=7, interval=0.50)
         pyautogui.press('enter')
 
     def _openImportCertificate(self):
         logging.info('Open import certificate.')
 
-        time.sleep(1)
-        pyautogui.press('tab', presses=2, interval=0.75)
+        time.sleep(0.5)
+        pyautogui.press('tab', presses=2, interval=0.50)
         pyautogui.press('enter')
 
     def _findCertificate(self):
@@ -48,7 +49,7 @@ class Certificate:
     def _typePasswordCertificate(self):
         logging.info('Typing password certificate.')
 
-        time.sleep(1)
+        time.sleep(0.5)
         pyautogui.write(self._getPasswordCertificate())
         pyautogui.press('enter')
 
