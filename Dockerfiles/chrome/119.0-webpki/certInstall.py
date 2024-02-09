@@ -51,6 +51,7 @@ class Certificate:
         logging.info('Confirm extension installation.')
 
         pyautogui.press('tab', presses=2, interval=0.50)
+        time.sleep(0.5)
         pyautogui.hotkey('enter')
         time.sleep(1)
 
@@ -61,6 +62,7 @@ class Certificate:
         pyautogui.hotkey('ctrl', 'f')
         time.sleep(0.5)
         pyautogui.write('Add to Chrome')
+        time.sleep(0.5)
         pyautogui.hotkey('ctrl', 'enter')
         time.sleep(0.5)
 
@@ -72,7 +74,7 @@ class Certificate:
         pyautogui.hotkey('ctrl', 'l')
         pyautogui.write('https://chromewebstore.google.com/detail/web-pki/dcngeagmmhegagicpcmpinaoklddcgon?pli=1')
         pyautogui.press('enter')
-        time.sleep(2)
+        time.sleep(5)
 
     def _find_certificate(self):
 
@@ -81,6 +83,7 @@ class Certificate:
         time.sleep(1)
         pyautogui.press('/')
         pyautogui.write('home/selenium/Downloads/decoded_certificate.pfx')
+        time.sleep(0.5)
         pyautogui.press('enter')
 
     def _type_password_certificate(self):
