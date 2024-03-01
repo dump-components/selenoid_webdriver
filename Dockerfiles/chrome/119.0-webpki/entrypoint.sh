@@ -9,7 +9,8 @@ if [ -n "$VERBOSE" ]; then
     DRIVER_ARGS="$DRIVER_ARGS --verbose"
 fi
 
-/home/selenium/install_certificate/install_certificate.sh &
+/home/selenium/certificate_actions/install_certificate.sh &
+/home/selenium/certificate_actions/authorize_certificate.sh &
 
 clean() {
   if [ -n "$FILESERVER_PID" ]; then

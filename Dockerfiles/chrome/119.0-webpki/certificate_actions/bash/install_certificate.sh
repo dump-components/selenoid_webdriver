@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOWNLOADS_FOLDER="/home/selenium/Downloads"
-INSTALL_CERTIFICATE_FILES="/home/selenium/install_certificate"
+INSTALL_CERTIFICATE_FILES="/home/selenium/certificate_actions/py/install_certificate.py"
 FILE_TO_FIND="certificate.pfx"
 
 while true; do
@@ -23,6 +23,7 @@ while true; do
 done
 
 echo "Run certificate installation"
-python3 /home/selenium/install_certificate/certInstall.py
+
+python3 $INSTALL_CERTIFICATE_FILES
 
 echo 'installed' > $DOWNLOADS_FOLDER/certificate_status.txt

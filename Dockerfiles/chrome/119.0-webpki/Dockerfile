@@ -6,8 +6,7 @@ RUN apt update -y
 
 RUN apt-get update && apt-get install --reinstall sudo
 
-RUN apt install -y pip xauth python3-tk python3-dev python3-xlib && \
-mkdir /home/selenium/install_certificate
+RUN apt install -y pip xauth python3-tk python3-dev python3-xlib
 
 RUN pip install pyautogui
 
@@ -19,9 +18,10 @@ WORKDIR /home/selenium
 RUN touch /home/selenium/.Xauthority && chmod 777 /home/selenium/.Xauthority
 
 COPY entrypoint.sh /
-COPY ./ /home/selenium/install_certificate
+COPY ./ /home/selenium
 
-RUN chmod +x /entrypoint.sh && chmod +x /home/selenium/install_certificate/install_certificate.sh
+RUN chmod +x /entrypoint.sh && chmod +x /home/selenium/certificate_actions/bash/install_certificate.sh
+RUN chmod +x /entrypoint.sh && chmod +x /home/selenium/certificate_actions/bash/authorize_certificate.sh
 
 ENV XAUTHORITY=/home/selenium/.Xauthority
 
