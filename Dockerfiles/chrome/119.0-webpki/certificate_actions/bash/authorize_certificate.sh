@@ -9,7 +9,7 @@ while true; do
     if [ ! -f "$LOCK_FILE" ]; then
         echo "$(date '+%Y-%m-%d %H:%M:%S') - Lock file not found. Executing Python script..."
         
-        python "$PYTHON_SCRIPT" && echo "Script executed successfully." || echo "Failed to execute script."
+        python3 "$PYTHON_SCRIPT" && echo "Script executed successfully." || echo "Failed to execute script."
         touch "$LOCK_FILE"
         
         echo "Lock file created at $LOCK_FILE."
