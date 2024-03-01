@@ -9,6 +9,7 @@ class AuthorizeCertificate:
     log.info("Clicking at the center of the screen.")
     
     center_x, center_y = (dimension / 2 for dimension in screen.size())
+    screen.moveTo(center_x, center_y, duration=0.25)
     screen.click(center_x, center_y)
     
     log.debug("Clicked at ({}, {}).".format(center_x, center_y))
@@ -27,4 +28,7 @@ class AuthorizeCertificate:
 
 
 if __name__ == "__main__":
-    AuthorizeCertificate()
+    try:
+        AuthorizeCertificate()
+    except Exception as e:
+        log.exception('It was not possible to authorize the certificate.')
